@@ -49,19 +49,19 @@ public class CombinatorialMemberDataAttribute : Attribute, ICombinatorialValuesP
     {
         Requires.NotNull(parameterInfo, nameof(parameterInfo));
 
-        MemberInfo? testMethod = parameterInfo.Member;
+        MemberInfo testMethod = parameterInfo.Member;
 
-        Type? type = this.MemberType ?? testMethod?.DeclaringType;
+        Type? type = this.MemberType ?? testMethod.DeclaringType;
 
         if (type is null)
         {
-            return Array.Empty<object?>();
+            return [];
         }
 
         Func<object>? accessor = this.GetPropertyAccessor(type, parameterInfo) ?? this.GetMethodAccessor(type, parameterInfo) ?? this.GetFieldAccessor(type, parameterInfo);
         if (accessor is null)
         {
-            string? parameterText = this.Arguments?.Length > 0 ? $" with parameter types: {string.Join(", ", this.Arguments.Select(p => p?.GetType().FullName ?? "(null)"))}" : string.Empty;
+            string parameterText = this.Arguments?.Length > 0 ? $" with parameter types: {string.Join(", ", this.Arguments.Select(p => p?.GetType().FullName ?? "(null)"))}" : string.Empty;
             throw new ArgumentException($"Could not find public static member (property, field, or method) named '{this.MemberName}' on {type.FullName}{parameterText}.");
         }
 
@@ -167,7 +167,7 @@ public class CombinatorialMemberDataAttribute : Attribute, ICombinatorialValuesP
 
         for (int i = 0; i < parameters.Length; i++)
         {
-            if (arguments[i] is object arg)
+            if (arguments[i] is { } arg)
             {
                 if (!parameters[i].ParameterType.GetTypeInfo().IsAssignableFrom(arg.GetType().GetTypeInfo()))
                 {

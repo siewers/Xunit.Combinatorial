@@ -5,7 +5,7 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
-  <ItemGroup>
+  <ItemGroup>    
     <PackageVersion Include="Validation" Version="2.6.68" />
     <PackageVersion Include="xunit.v3.extensibility.core" Version="1.0.0" />
   </ItemGroup>
@@ -15,6 +15,12 @@
     <PackageVersion Include="xunit.v3" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
+    <PackageVersion Include="TUnit.Core" Version="0.6.117" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageVersion Include="PolySharp" Version="1.15.0" />
+  </ItemGroup>
+  <ItemGroup>
     <!-- Put repo-specific GlobalPackageReference items in this group. -->
   </ItemGroup>
   <ItemGroup Label="Library.Template">
@@ -22,7 +28,6 @@
     <GlobalPackageReference Include="DotNetAnalyzers.DocumentationAnalyzers" Version="1.0.0-beta.59" />
     <!-- The condition works around https://github.com/dotnet/sdk/issues/44951 -->
     <GlobalPackageReference Include="Nerdbank.GitVersioning" Version="3.7.115" Condition="!('$(TF_BUILD)'=='true' and '$(dotnetformat)'=='true')" />
-    <GlobalPackageReference Include="PolySharp" Version="1.15.0" />
     <GlobalPackageReference Include="StyleCop.Analyzers.Unstable" Version="1.2.0.556" />
   </ItemGroup>
 </Project>

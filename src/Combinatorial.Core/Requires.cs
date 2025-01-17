@@ -3,11 +3,12 @@
 
 using System.Collections;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 
 #pragma warning disable SA1611 // Element parameters must be documented
 
-namespace Xunit;
+namespace Combinatorial.Core;
 
 /// <summary>
 /// Common runtime checks that throw ArgumentExceptions upon failure.
@@ -23,7 +24,7 @@ internal static class Requires
     /// <returns>The value of the parameter.</returns>
     /// <exception cref="ArgumentNullException">Thrown if <paramref name="value"/> is <see langword="null"/>.</exception>
     [DebuggerStepThrough]
-    public static T NotNull<T>(T value, string parameterName)
+    public static T NotNull<T>([NotNull] T value, string parameterName)
         where T : class // ensures value-types aren't passed to a null checking method
     {
         if (value is null)
@@ -63,7 +64,7 @@ internal static class Requires
     /// to local variables to avoid C# warnings.
     /// </remarks>
     [DebuggerStepThrough]
-    public static void NotNull(System.Threading.Tasks.Task value, string parameterName)
+    public static void NotNull([NotNull] Task? value, string parameterName)
     {
         if (value is null)
         {
@@ -83,7 +84,7 @@ internal static class Requires
     /// to local variables to avoid C# warnings.
     /// </remarks>
     [DebuggerStepThrough]
-    public static void NotNull<T>(System.Threading.Tasks.Task<T> value, string parameterName)
+    public static void NotNull<T>([NotNull] Task<T>? value, string parameterName)
     {
         if (value is null)
         {
@@ -173,7 +174,7 @@ internal static class Requires
     /// <param name="parameterName">The name of the parameter to include in any thrown exception.</param>
     /// <exception cref="ArgumentException">Thrown if the tested condition is false.</exception>
     [DebuggerStepThrough]
-    public static void NotNullOrEmpty(System.Collections.IEnumerable values, string parameterName)
+    public static void NotNullOrEmpty([NotNull] IEnumerable? values, string parameterName)
     {
         // To the guy that is doing random code cleaning:
         // Consider the perfomance when changing the code to delegate to NotNull.
@@ -217,7 +218,7 @@ internal static class Requires
     /// <param name="parameterName">The name of the parameter to include in any thrown exception.</param>
     /// <exception cref="ArgumentException">Thrown if the tested condition is false.</exception>
     [DebuggerStepThrough]
-    public static void NotNullEmptyOrNullElements<T>(IEnumerable<T> values, string parameterName)
+    public static void NotNullEmptyOrNullElements<T>([NotNull] IEnumerable<T> values, string parameterName)
         where T : class // ensures value-types aren't passed to a null checking method
     {
         NotNull(values, parameterName);
@@ -248,7 +249,7 @@ internal static class Requires
     /// <param name="parameterName">The name of the parameter to include in any thrown exception.</param>
     /// <exception cref="ArgumentException">Thrown if the tested condition is false.</exception>
     [DebuggerStepThrough]
-    public static void NullOrNotNullElements<T>(IEnumerable<T> values, string parameterName)
+    public static void NullOrNotNullElements<T>(IEnumerable<T>? values, string parameterName)
     {
         if (values is not null)
         {

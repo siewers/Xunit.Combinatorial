@@ -4,7 +4,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
-namespace Xunit;
+namespace Combinatorial.Core;
 
 /// <summary>
 /// Utility methods for generating values for test parameters.

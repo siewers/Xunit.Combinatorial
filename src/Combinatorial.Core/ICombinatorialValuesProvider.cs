@@ -3,7 +3,7 @@
 
 using System.Reflection;
 
-namespace Xunit;
+namespace Combinatorial.Core;
 
 /// <summary>
 /// An interface that provides values for a parameter on a test method.

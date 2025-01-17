@@ -4,7 +4,7 @@
 using System.Globalization;
 using System.Reflection;
 
-namespace Xunit;
+namespace Combinatorial.Core;
 
 /// <summary>
 /// Common utility methods used by the various error detection and reporting classes.

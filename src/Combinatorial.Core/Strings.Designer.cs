@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Xunit; 
+namespace Combinatorial.Core;
 using System;
 using System.Reflection;
 
@@ -24,15 +24,15 @@ using System.Reflection;
 [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
 internal class Strings {
-    
+
     private static global::System.Resources.ResourceManager resourceMan;
-    
+
     private static global::System.Globalization.CultureInfo resourceCulture;
-    
+
     [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
     internal Strings() {
     }
-    
+
     /// <summary>
     ///   Returns the cached ResourceManager instance used by this class.
     /// </summary>
@@ -46,7 +46,7 @@ internal class Strings {
             return resourceMan;
         }
     }
-    
+
     /// <summary>
     ///   Overrides the current thread's CurrentUICulture property for all
     ///   resource lookups using this strongly typed resource class.
@@ -60,7 +60,7 @@ internal class Strings {
             resourceCulture = value;
         }
     }
-    
+
     /// <summary>
     ///   Looks up a localized string similar to &apos;{0}&apos; must contain at least one element..
     /// </summary>
@@ -69,7 +69,7 @@ internal class Strings {
             return ResourceManager.GetString("Argument_EmptyArray", resourceCulture);
         }
     }
-    
+
     /// <summary>
     ///   Looks up a localized string similar to &apos;{0}&apos; cannot be an empty string (&quot;&quot;) or start with the null character..
     /// </summary>
@@ -78,7 +78,7 @@ internal class Strings {
             return ResourceManager.GetString("Argument_EmptyString", resourceCulture);
         }
     }
-    
+
     /// <summary>
     ///   Looks up a localized string similar to &apos;{0}&apos; cannot contain a null (Nothing in Visual Basic) element..
     /// </summary>
@@ -87,7 +87,7 @@ internal class Strings {
             return ResourceManager.GetString("Argument_NullElement", resourceCulture);
         }
     }
-    
+
     /// <summary>
     ///   Looks up a localized string similar to The parameter &quot;{0}&quot; cannot consist entirely of white space characters..
     /// </summary>
@@ -96,7 +96,7 @@ internal class Strings {
             return ResourceManager.GetString("Argument_Whitespace", resourceCulture);
         }
     }
-    
+
     /// <summary>
     ///   Looks up a localized string similar to An internal error occurred. Please contact customer support..
     /// </summary>
@@ -105,7 +105,7 @@ internal class Strings {
             return ResourceManager.GetString("InternalExceptionMessage", resourceCulture);
         }
     }
-    
+
     /// <summary>
     ///   Looks up a localized string similar to {0} must not exceed the length of the range from {1} to {2}..
     /// </summary>
@@ -114,7 +114,7 @@ internal class Strings {
             return ResourceManager.GetString("MoreRandomValuesRequestedThanPossibleOnes", resourceCulture);
         }
     }
-    
+
     /// <summary>
     ///   Looks up a localized string similar to Cannot find an instance of the {0} service..
     /// </summary>
@@ -123,7 +123,7 @@ internal class Strings {
             return ResourceManager.GetString("ServiceMissing", resourceCulture);
         }
     }
-    
+
     /// <summary>
     ///   Looks up a localized string similar to We are unable to generate the desired number of unique random values because too many non-unique random numbers are coming from the random number generator. Try reducing your target count or expanding your allowed range..
     /// </summary>
@@ -132,7 +132,7 @@ internal class Strings {
             return ResourceManager.GetString("TooManyRandomCollisions", resourceCulture);
         }
     }
-    
+
     /// <summary>
     ///   Looks up a localized string similar to The value for {0} must be positive..
     /// </summary>
@@ -141,7 +141,7 @@ internal class Strings {
             return ResourceManager.GetString("ValueMustBePositive", resourceCulture);
         }
     }
-    
+
     /// <summary>
     ///   Looks up a localized string similar to The value of {0} must not be greater than the value of {1}..
     /// </summary>

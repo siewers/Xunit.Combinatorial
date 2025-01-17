@@ -1,4 +1,4 @@
-// Copyright (c) Andrew Arnott. All rights reserved.
+﻿// Copyright (c) Andrew Arnott. All rights reserved.
 // Licensed under the Ms-PL license. See LICENSE file in the project root for full license information.
 
 using System.Globalization;
@@ -69,7 +69,7 @@ public class CombinatorialRandomDataAttribute : Attribute, ICombinatorialValuesP
 
         Random random = this.Seed != NoSeed ? new Random(this.Seed) : new Random();
 
-        HashSet<int> collisionChecker = new HashSet<int>();
+        var collisionChecker = new HashSet<int>();
         object[] values = new object[this.Count];
         int collisionCount = 0;
         int i = 0;

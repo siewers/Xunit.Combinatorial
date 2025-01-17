@@ -21,7 +21,7 @@ public class CombinatorialValuesAttribute : Attribute, ICombinatorialValuesProvi
     {
         // When values is `null`, it's because the user passed in `null` as the only value and C# interpreted it as a null array.
         // Re-interpret that.
-        this.values = values ?? new object?[] { null };
+        this.values = values ?? [null];
     }
 
     /// <inheritdoc />

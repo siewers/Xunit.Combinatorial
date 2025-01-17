@@ -22,7 +22,7 @@ public class PairwiseDataAttribute : DataAttribute
     {
         Requires.NotNull(testMethod, nameof(testMethod));
 
-        ParameterInfo[]? parameters = testMethod.GetParameters();
+        ParameterInfo[] parameters = testMethod.GetParameters();
         if (parameters.Length == 0)
         {
             return new([]);

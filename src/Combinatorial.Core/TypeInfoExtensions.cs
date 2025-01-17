@@ -3,7 +3,7 @@
 
 using System.Reflection;
 
-namespace Xunit;
+namespace Combinatorial.Core;
 
 /// <summary>
 /// Extension methods for the <see cref="Type"/> class to emulate older reflection APIs.
